@@ -22,7 +22,7 @@ describe(CONTRACT_NAME, () => {
     contract = contract.connect(attacker);
   });
 
-  it("Solves the challenge", async () => {
+  it("Solves the challenge 01", async () => {
     tx = await contract.contribute({ value: 1 });
     await tx.wait();
 
